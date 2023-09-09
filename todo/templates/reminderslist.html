@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{%block title_block%}
+<title>todo-list</title>
+{%endblock%}
+
+{%block body_block%}
+
+
+    <div class="row">
+    <div class="col-2"></div>
+        <div class="col-8">
+            <table class="table table-striped">
+             <tr>
+                    <th>Name</th>
+                    <th>Time</th>
+                   
+                    <th>Action</th>
+                </tr>
+        
+                {%for t in tasks%}
+                    <tr>
+                        <td>
+                            {{t.name}}
+                        </td>
+                        
+                        <td>
+                            {{t.reminder_time}}
+                        </td>
+                        
+                        <td>
+                            <a href="{%url 'reminder_create'%}" class="btn btn-outline-info">Add New reminder</a>
+              
+                        </td>
+                    </tr>
+                    {%endfor%}
+            </table>
+        </div>
+        
+    </div>
+    </div>
+{% endblock %}
+
+
+<div class="row">
+    <div class="col-5"></div>
+    <div class="col-3">
+        <a href="{%url 'reminder_create'%}" class="btn btn-outline-info">Add reminder</a>
+    </div>
+    <div class="col-4"></div>
+</div>

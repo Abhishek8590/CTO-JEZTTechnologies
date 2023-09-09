@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{%block title_block%}
+<title>todo-list</title>
+{%endblock%}
+
+{%block body_block%}
+
+
+    <div class="row">
+    <div class="col-2"></div>
+        <div class="col-8">
+            <table class="table table-striped">
+             <tr>
+                    <th>Task</th>
+                    <th>Status</th>
+                    <th>Date</th>
+                    <th>Action</th>
+                </tr>
+        
+                {%for t in tasks%}
+                    <tr>
+                        <td>
+                            {{t.task_name}}
+                        </td>
+                        
+                        <td>
+                            {{t.status}}
+                        </td>
+                        <td>
+                            {{t.created_date}}
+                        </td>
+                        <td>
+                     
+                            <a href="{%url 'task-delete' t.id %}" class="btn btn-outline-danger">Delete</a>
+                            <a href="{%url 'task-edit' t.id %}" class="btn btn-outline-danger">Edit</a>
+                        
+                        </td>
+                    </tr>
+                    {%endfor%}
+            </table>
+        </div>
+        
+    </div>
+    </div>
+{% endblock %}

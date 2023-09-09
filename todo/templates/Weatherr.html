@@ -1,0 +1,21 @@
+<!-- weather.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather Dashboard</title>
+</head>
+<body>
+    <h1>Weather Dashboard</h1>
+    
+    <ul>
+        {% for data in weather_data %}
+            <li>
+                <h2>{{ data.city }}</h2>
+                <p>Temperature: {{ data.temperature }}°C</p>
+                <p>Description: {{ data.description }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

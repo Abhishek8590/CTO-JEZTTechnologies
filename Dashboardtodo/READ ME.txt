@@ -1,0 +1,8 @@
+HOW TO RUN
+
+
+
+url: localhost:8000/register/
+
+Create an account using the register page and access the dashboard
+

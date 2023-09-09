@@ -1,0 +1,19 @@
+
+
+{%block title_block%}
+<title>todo-add</title>
+{%endblock%}
+
+{%block body_block%}
+<div class="row">
+    <div class="col-4"></div>
+    <div class="col-4">
+        <form action="" method="post" enctype="multipart/form-data">
+            {%csrf_token%}
+            {{form.as_p}}
+            <input type="submit" value="add" class="btn btn-success">
+        </form>
+    </div>
+    <div class="col-4"></div>
+</div>
+{%endblock%}
